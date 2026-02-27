@@ -23,7 +23,7 @@ DB_CONFIG = {
 }
 
 def get_db_connection():
-    db_url = os.environ.get('postgresql://mini_ins_db_user:NrVHMEWwYYsnR8fl8KjFkI6FzrMQa7M3@dpg-d6gu89paae7s73ep20fg-a/mini_ins_db')
+    db_url = os.environ.get('DATABASE_URL')
     if db_url:
         return psycopg2.connect(db_url)
     return psycopg2.connect(**DB_CONFIG, client_encoding='utf8')
